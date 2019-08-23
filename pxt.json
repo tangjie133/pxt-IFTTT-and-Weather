@@ -1,5 +1,5 @@
 {
-    "name": "ObloqIFTTT",
+    "name": "ObloqIFTTTandWeather",
     "version": "1.0.3",
     "description": "Add Wi-Fi connectivity to micro:bit and start your IoT project in 5 minutes!",
     "license": "MIT",
@@ -9,7 +9,7 @@
     },
     "files": [
         "README.md",
-        "ObloqIFTTT.ts",
+        "ObloqIFTTTandWeather.ts",
         "Obloq.cpp",
         "_locales/zh-cn/ObloqIFTTT-strings.json",
         "_locales/zh-tw/ObloqIFTTT-strings.json"
