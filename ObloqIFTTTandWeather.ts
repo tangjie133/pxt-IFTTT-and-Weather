@@ -638,8 +638,8 @@ namespace ObloqIFTTTandWeather {
         if (!OBLOQ_SERIAL_INIT) {
             Obloq_serial_init()
         }
-        obloqWriteString("|3|1|http://api.dfrobot.top/weather?city=Singapore&locations=" + city + "&info=" + info + "|\r")
-        //obloqWriteString("|3|1|http://192.168.1.103:1125/weather?city=Singapore&locations=" + city + "&info=" + info + "|\r")
+        //obloqWriteString("|3|1|http://api.dfrobot.top/weather?city=Singapore&locations=" + city + "&info=" + info + "|\r")
+        obloqWriteString("|3|1|http://192.168.1.103:1125/weather?city=Singapore&locations=" + city + "&info=" + info + "|\r")
 
         return Obloq_http_wait_request(10000);
     }
@@ -650,7 +650,8 @@ namespace ObloqIFTTTandWeather {
     export function get_weather(): string {
         let city = get_city();
         let ret = get_request(city, "weather");
-        return ret;
+        let len = <number>ret.length() - 1;
+        return ret.substr(0, len);
     }
 	
 	 //% weight=80
@@ -659,7 +660,8 @@ namespace ObloqIFTTTandWeather {
     export function get_temperature(): string {
         let city = get_city();
         let ret = get_request(city, "temp_high/temp_low")
-        return ret;
+        let len = <number>ret.length() - 1;
+        return ret.substr(0, len);
     }
 
     //% weight=80
@@ -668,7 +670,8 @@ namespace ObloqIFTTTandWeather {
     export function get_humidity(): string {
         let city = get_city();
         let ret = get_request(city, "humi_high/humi_low")
-        return ret;
+        let len = <number>ret.length() - 1;
+        return ret.substr(0, len);
     }
 
     //% weight=80
@@ -677,7 +680,8 @@ namespace ObloqIFTTTandWeather {
     export function get_windSpeed(): string {
         let city = get_city();
         let ret = get_request(city, "winds_max/winds_min");
-        return ret;
+        let len = <number>ret.length() - 1;
+        return ret.substr(0, len);
     }
     /**
      * Disconnect the serial port.
