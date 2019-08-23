@@ -691,6 +691,7 @@ namespace ObloqIFTTTandWeather {
      * Send the ping.time(ms): private long maxWait
      * @param time to timeout, eg: 10000
     */
+	/*
     //% weight=49
     //% blockId=Obloq_send_ping
     //% block="sendPing"
@@ -727,12 +728,13 @@ namespace ObloqIFTTTandWeather {
         }
         return OBLOQ_BOOL_TYPE_IS_FALSE
     }
-
+	*/
 
     /**
      * Get the software version.time(ms): private long maxWait
      * @param time to timeout, eg: 10000
     */
+	/*
     //% weight=50
     //% blockId=Obloq_get_version
     //% block="get version"
@@ -769,12 +771,13 @@ namespace ObloqIFTTTandWeather {
         }
         return OBLOQ_STR_TYPE_IS_NONE
     }
-
+	*/
 
     /**
      * Heartbeat request.time(ms): private long maxWait
      * @param time to timeout, eg: 10000
     */
+	/*
     //% weight=48
     //% blockId=Obloq_get_heartbeat
     //% block="get heartbeat"
@@ -811,10 +814,11 @@ namespace ObloqIFTTTandWeather {
         }
         return OBLOQ_BOOL_TYPE_IS_FALSE
     }
-
+	*/
     /**
      * Stop the heartbeat request.
     */
+	/*
     //% weight=47
     //% blockId=Obloq_stop_heartbeat
     //% block="stop heartbeat"
@@ -887,6 +891,7 @@ namespace ObloqIFTTTandWeather {
         return OBLOQ_BOOL_TYPE_IS_FALSE
     }
 
+*/
 
     /**
      * Reconnect WiFi.time(ms): private long maxWait
