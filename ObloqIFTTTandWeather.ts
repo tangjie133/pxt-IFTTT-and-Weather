@@ -638,8 +638,8 @@ namespace ObloqIFTTTandWeather {
         if (!OBLOQ_SERIAL_INIT) {
             Obloq_serial_init()
         }
-        //obloqWriteString("|3|1|http://api.dfrobot.top/weather?city=Singapore&locations=" + city + "&info=" + info + "|\r")
-        obloqWriteString("|3|1|http://192.168.1.103:1125/weather?city=Singapore&locations=" + city + "&info=" + info + "|\r")
+        obloqWriteString("|3|1|http://api.dfrobot.top/weather?city=Singapore&locations=" + city + "&info=" + info + "|\r")
+        //obloqWriteString("|3|1|http://192.168.1.103:1125/weather?city=Singapore&locations=" + city + "&info=" + info + "|\r")
 
         return Obloq_http_wait_request(10000);
     }
