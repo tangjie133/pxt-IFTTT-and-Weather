@@ -1091,6 +1091,7 @@ namespace ObloqIFTTTandWeather {
      * The HTTP get request.url(string):URL:time(ms): private long maxWait
      * @param time set timeout, eg: 10000
     */
+	/*
     //% weight=79
     //% blockId=Obloq_http_get
     //% block="IFTTT(get) | value1 %value1| value2 %value2| value3 %value3|timeout(ms) %time"
@@ -1111,6 +1112,7 @@ namespace ObloqIFTTTandWeather {
         }
         return ret
     }
+	*/
 
     /**
      * The HTTP post request.url(string): URL; content(string):content
