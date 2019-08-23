@@ -11,8 +11,8 @@
         "README.md",
         "ObloqIFTTTandWeather.ts",
         "Obloq.cpp",
-        "_locales/zh-cn/ObloqIFTTT-strings.json",
-        "_locales/zh-tw/ObloqIFTTT-strings.json"
+        "_locales/zh-cn/ObloqIFTTTandWeather-strings.json",
+        "_locales/zh-tw/ObloqIFTTTandWeather-strings.json"
     ],
     "testFiles": [
         "test.ts",
