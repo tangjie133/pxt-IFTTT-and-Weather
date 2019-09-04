@@ -9,7 +9,7 @@
     },
     "files": [
         "README.md",
-        "ObloqIFTTTandWeather.ts",
+        "IFTTT_MQTT_Weather.ts",
         "Obloq.cpp",
         "_locales/zh-cn/ObloqIFTTTandWeather-strings.json",
         "_locales/zh-tw/ObloqIFTTTandWeather-strings.json"
