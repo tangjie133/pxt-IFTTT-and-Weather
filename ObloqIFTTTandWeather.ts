@@ -94,7 +94,7 @@ enum LOCATION {
 /**
  *Obloq implementation method.
  */
-//% weight=10 color=#008B00 icon="\uf1eb" block="HTTP-MQTT-Weather"
+//% weight=10 color=#008B00 icon="\uf1eb" block="ObloqIFTTTandWeather"
 namespace ObloqIFTTTandWeather {
 
     //serial
@@ -497,14 +497,12 @@ namespace ObloqIFTTTandWeather {
     //% SERVER.fieldEditor="gridpicker" SERVER.fieldOptions.columns=2
     //% blockId=Obloq_mqtt_setup
     //% block="Beebotte setup mqtt|Pin set:|receiving data (green wire): %receive|sending data (blue wire): %send|Wi-Fi:|name: %SSID|password: %PASSWORD|Beebotte service:|API Key: %API_KEY|Secret Key: %SECRET_KEY|(default topic_0) Topic: %IOT_TOPIC|start connection"
-    export function Obloq_mqtt_setup(/*serial*//*receive: SerialPin, send: SerialPin,*/
-                                     /*wifi*//*SSID: string, PASSWORD: string,*/
-                                     /*mqtt*/API_KEY: string, SECRET_KEY: string, IOT_TOPIC: string):
+    export function Obloq_mqtt_setup(/*mqtt*/API_KEY: string, SECRET_KEY: string, IOT_TOPIC: string):
         void {
-        // OBLOQ_WIFI_SSID = SSID
-        //OBLOQ_WIFI_PASSWORD = PASSWORD
+        //OBLOQ_WIFI_SSID = SSID
+       // OBLOQ_WIFI_PASSWORD = PASSWORD
         OBLOQ_MQTT_PWD = SECRET_KEY
-         OBLOQ_MQTT_ID = API_KEY
+        OBLOQ_MQTT_ID = API_KEY
         OBLOQ_MQTT_TOPIC[0][0] = IOT_TOPIC
         //OBLOQ_SERIAL_TX = send
         //OBLOQ_SERIAL_RX = receive

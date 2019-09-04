@@ -1,7 +1,7 @@
 {
     "ObloqIFTTTandWeather.SERVERS.China|block": "中国",
     "ObloqIFTTTandWeather.SERVERS.Global|block": "全球",
-    "ObloqIFTTTandWeather.Obloq_mqtt_setup|block": "Obloq MQTT 初始设置 | 物联网服务: | Iot_id: %IOT_ID| Iot_pwd: %IOT_PWD| (默认 topic_0) Topic: %IOT_TOPIC | 启动连接: | 服务器: %SERVER",
+    "ObloqIFTTTandWeather.Obloq_mqtt_setup|block": " MQTT 初始设置 |  Iot_id: %IOT_ID| Iot_pwd: %IOT_PWD| (默认 topic_0) Topic: %IOT_TOPIC | 启动连接: | 服务器: %SERVER",
     "ObloqIFTTTandWeather.Obloq_serial_pin_set|block": "引脚设置| 接收数据(绿色导线): %receive| 发送数据(蓝色导线): %send",
     "ObloqIFTTTandWeather.Obloq_serial_quit|block": "断开串口连接",
     "ObloqIFTTTandWeather.Obloq_send_ping|block": "发送PING",
@@ -19,7 +19,7 @@
     "ObloqIFTTTandWeather.Obloq_mqtt_callback_user|block": "在 topic_0 收到消息时运行",
     "ObloqIFTTTandWeather.Obloq_mqtt_callback_user_more|block": "在 %top|收到消息时运行",
     "ObloqIFTTTandWeather.WIFI_setup|block": "WIFI设置 | 引脚设置: | 接收数据(绿色导线): %receive| 发送数据(蓝色导线): %send | Wi-Fi: | 名称: %SSID| 密码: %PASSWORD开始连接",
-    "ObloqIFTTTandWeather.Obloq_http_IFTTT|block": "Obloq IFTTT配置:|event: %EVENT|key: %KEY",
+    "ObloqIFTTTandWeather.Obloq_http_IFTTT|block": "IFTTT配置:|event: %EVENT|key: %KEY",
     "ObloqIFTTTandWeather.get_weather|block": "获取天气",
     "ObloqIFTTTandWeather.Set_location|block": "设置新加坡位置 %location",
     "ObloqIFTTTandWeather.get_temperature|block": "获取温度",
