@@ -1,5 +1,5 @@
 {
-    "name": "ObloqIFTTTandWeather",
+    "name": "ObloqIFTTT-MQTT-dWeather",
     "version": "1.0.3",
     "description": "Add Wi-Fi connectivity to micro:bit and start your IoT project in 5 minutes!",
     "license": "MIT",
@@ -20,6 +20,6 @@
         "httpTest.ts"
     ],
     "public": true,
-    "installedVersion": "workspace:952c6f69-bdcf-44c9-1e62-187cd82ada63",
+    "installedVersion": "workspace:b087d48b-0847-47b5-36ef-4bbb6d4e2068",
     "preferredEditor": "tsprj"
 }

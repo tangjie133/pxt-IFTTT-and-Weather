@@ -94,7 +94,7 @@ enum LOCATION {
 /**
  *Obloq implementation method.
  */
-//% weight=10 color=#008B00 icon="\uf1eb" block="ObloqIFTTTandWeather"
+//% weight=10 color=#008B00 icon="\uf1eb" block="HTTP-MQTT-Weather"
 namespace ObloqIFTTTandWeather {
 
     //serial
@@ -457,29 +457,27 @@ namespace ObloqIFTTTandWeather {
     //% send.fieldEditor="gridpicker" send.fieldOptions.columns=3
     //% blockId=Obloq_http_setup
     //% block="Webhooks http set|Pin set:|receiving data (green wire): %receive|sending data (blue wire): %send|Wi-Fi:|name: %SSID|password: %PASSWORD|start connection"
-    export function Obloq_http_setup(/*serial*/receive: SerialPin, send: SerialPin,
+    export function WIFI_setup(/*serial*/receive: SerialPin, send: SerialPin,
                                      /*wifi*/SSID: string, PASSWORD: string,
         /*EVENT: string, KEY: string*/):
         void {
         OBLOQ_WIFI_SSID = SSID
         OBLOQ_WIFI_PASSWORD = PASSWORD
-       // OBLOQ_WEBHOOKS_EVENT = EVENT
-        //OBLOQ_WEBHOOKS_KEY = KEY
         OBLOQ_SERIAL_TX = send
         OBLOQ_SERIAL_RX = receive
         Obloq_serial_init()
         Obloq_start_connect_http()
     }
- /**
-     * @param EVENT to EVENT ,eg: "yourEvent"
-     * @param KEY to KEY ,eg: "yourKey"
-    */
+    /**
+        * @param EVENT to EVENT ,eg: "yourEvent"
+        * @param KEY to KEY ,eg: "yourKey"
+       */
     //% weight=99
     //% receive.fieldEditor="gridpicker" receive.fieldOptions.columns=3
     //% send.fieldEditor="gridpicker" send.fieldOptions.columns=3
     //% blockId=Obloq_http_IFTTT
     //% block="Webhooks config:|event: %EVENT|key: %KEY|"
-    export function Obloq_http_IFTTT(EVENT: string, KEY: string):void{
+    export function Obloq_http_IFTTT(EVENT: string, KEY: string): void {
         OBLOQ_WEBHOOKS_EVENT = EVENT
         OBLOQ_WEBHOOKS_KEY = KEY
     }
@@ -499,17 +497,17 @@ namespace ObloqIFTTTandWeather {
     //% SERVER.fieldEditor="gridpicker" SERVER.fieldOptions.columns=2
     //% blockId=Obloq_mqtt_setup
     //% block="Beebotte setup mqtt|Pin set:|receiving data (green wire): %receive|sending data (blue wire): %send|Wi-Fi:|name: %SSID|password: %PASSWORD|Beebotte service:|API Key: %API_KEY|Secret Key: %SECRET_KEY|(default topic_0) Topic: %IOT_TOPIC|start connection"
-    export function Obloq_mqtt_setup(/*serial*/receive: SerialPin, send: SerialPin,
-                                     /*wifi*/SSID: string, PASSWORD: string,
+    export function Obloq_mqtt_setup(/*serial*//*receive: SerialPin, send: SerialPin,*/
+                                     /*wifi*//*SSID: string, PASSWORD: string,*/
                                      /*mqtt*/API_KEY: string, SECRET_KEY: string, IOT_TOPIC: string):
         void {
-        OBLOQ_WIFI_SSID = SSID
-        OBLOQ_WIFI_PASSWORD = PASSWORD
+        // OBLOQ_WIFI_SSID = SSID
+        //OBLOQ_WIFI_PASSWORD = PASSWORD
         OBLOQ_MQTT_PWD = SECRET_KEY
-        OBLOQ_MQTT_ID = API_KEY
+         OBLOQ_MQTT_ID = API_KEY
         OBLOQ_MQTT_TOPIC[0][0] = IOT_TOPIC
-        OBLOQ_SERIAL_TX = send
-        OBLOQ_SERIAL_RX = receive
+        //OBLOQ_SERIAL_TX = send
+        //OBLOQ_SERIAL_RX = receive
         Obloq_serial_init()
         Obloq_start_connect_mqtt(SERVERS.Global, "connect wifi")
     }
@@ -552,7 +550,7 @@ namespace ObloqIFTTTandWeather {
         }
     }
     //天气
-	//% weight=80
+    //% weight=80
     //% blockId=Obloq_Weather_setLocation
     //% block="Set Location|%location"
     export function Set_location(location: LOCATION): void {
@@ -629,8 +627,8 @@ namespace ObloqIFTTTandWeather {
 
 
     }
-	
-	 function get_request(city: string, info: string): string {
+
+    function get_request(city: string, info: string): string {
         while (OBLOQ_WORKING_MODE_IS_STOP) { basic.pause(20) }
         if (!OBLOQ_HTTP_INIT)
             return OBLOQ_STR_TYPE_IS_NONE
@@ -643,8 +641,8 @@ namespace ObloqIFTTTandWeather {
 
         return Obloq_http_wait_request(10000);
     }
-	
-	 //% weight=80
+
+    //% weight=80
     //% blockId=Obloq_Weather_getWeather
     //% block="Get weather"
     export function get_weather(): string {
@@ -652,8 +650,8 @@ namespace ObloqIFTTTandWeather {
         let ret = get_request(city, "weather");
         return ret;
     }
-	
-	 //% weight=80
+
+    //% weight=80
     //% blockId=Obloq_Weather_getTemperature
     //% block="Get temperature"
     export function get_temperature(): string {
@@ -1035,15 +1033,15 @@ namespace ObloqIFTTTandWeather {
         while (OBLOQ_BOOL_TYPE_IS_TRUE) {
             basic.pause(100)
             if (OBLOQ_ANSWER_CMD == "200") {//http请求成功
-			  OBLOQ_ANSWER_CMD = "";
+                OBLOQ_ANSWER_CMD = "";
                 return OBLOQ_ANSWER_CONTENT //返回消息
             } else if (OBLOQ_ANSWER_CMD == "-1") {//获取数据失败
                 Obloq_http_wrong_animation("requestFailed")
-				  OBLOQ_ANSWER_CMD = "";
+                OBLOQ_ANSWER_CMD = "";
                 return OBLOQ_STR_TYPE_IS_NONE
             } else if (OBLOQ_ANSWER_CMD == "1") {//http请求字段错误
                 Obloq_http_wrong_animation("requestFailed")
-				  OBLOQ_ANSWER_CMD = "";
+                OBLOQ_ANSWER_CMD = "";
                 return OBLOQ_STR_TYPE_IS_NONE
             }
 
@@ -1136,9 +1134,9 @@ namespace ObloqIFTTTandWeather {
         if (!OBLOQ_SERIAL_INIT) {
             Obloq_serial_init()
         }
-        obloqWriteString("|3|2|http://" + OBLOQ_WEBHOOKS_URL + "/trigger/" + OBLOQ_WEBHOOKS_EVENT + "/with/key/" + OBLOQ_WEBHOOKS_KEY + ",{\"value1\":\""+value1+"\",\"value2\":\""+value2+"\",\"value3\":\""+value3+"\" }"+"|\r")
+        obloqWriteString("|3|2|http://" + OBLOQ_WEBHOOKS_URL + "/trigger/" + OBLOQ_WEBHOOKS_EVENT + "/with/key/" + OBLOQ_WEBHOOKS_KEY + ",{\"value1\":\"" + value1 + "\",\"value2\":\"" + value2 + "\",\"value3\":\"" + value3 + "\" }" + "|\r")
         let ret = Obloq_http_wait_request(time)
-        if (ret == "Congratulations! You've fired the testObloq event"){
+        if (ret == "Congratulations! You've fired the testObloq event") {
             ret = "OK"
         }
         return ret
