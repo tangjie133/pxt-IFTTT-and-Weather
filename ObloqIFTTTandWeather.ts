@@ -496,7 +496,7 @@ namespace ObloqIFTTTandWeather {
     //% send.fieldEditor="gridpicker" send.fieldOptions.columns=3
     //% SERVER.fieldEditor="gridpicker" SERVER.fieldOptions.columns=2
     //% blockId=Obloq_mqtt_setup
-    //% block="Beebotte setup mqtt|Pin set:|receiving data (green wire): %receive|sending data (blue wire): %send|Wi-Fi:|name: %SSID|password: %PASSWORD|Beebotte service:|API Key: %API_KEY|Secret Key: %SECRET_KEY|(default topic_0) Topic: %IOT_TOPIC|start connection"
+    //% block="Beebotte setup mqtt|API Key: %API_KEY|Secret Key: %SECRET_KEY|(default topic_0) Topic: %IOT_TOPIC|start connection"
     export function Obloq_mqtt_setup(/*mqtt*/API_KEY: string, SECRET_KEY: string, IOT_TOPIC: string):
         void {
         //OBLOQ_WIFI_SSID = SSID

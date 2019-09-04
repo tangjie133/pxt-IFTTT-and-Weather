@@ -1,7 +1,7 @@
 {
     "ObloqIFTTTandWeather.SERVERS.China|block": "中国",
     "ObloqIFTTTandWeather.SERVERS.Global|block": "全球",
-    "ObloqIFTTTandWeather.Obloq_mqtt_setup|block": " MQTT 初始设置 |  Iot_id: %IOT_ID| Iot_pwd: %IOT_PWD| (默认 topic_0) Topic: %IOT_TOPIC | 启动连接: | 服务器: %SERVER",
+    "ObloqIFTTTandWeather.Obloq_mqtt_setup|block": " MQTT 初始设置 | Iot_id: %API_KEY| Iot_pwd: %SECRET_KEY| (默认 topic_0) Topic: %IOT_TOPIC | 启动连接: | 服务器: %SERVER",
     "ObloqIFTTTandWeather.Obloq_serial_pin_set|block": "引脚设置| 接收数据(绿色导线): %receive| 发送数据(蓝色导线): %send",
     "ObloqIFTTTandWeather.Obloq_serial_quit|block": "断开串口连接",
     "ObloqIFTTTandWeather.Obloq_send_ping|block": "发送PING",
